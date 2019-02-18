@@ -1,0 +1,105 @@
+    <!-- Start: Header -->
+
+    {% if page.header %}
+      <div class="header">
+        {{ page.header }}
+      </div>
+    {% endif %}
+    <!-- End: Header -->
+
+<br>
+
+    <!--Start: Highlighted -->
+    {% if page.highlighted %}
+      <div class="highlighted">
+          {{ page.highlighted }}
+      </div>
+    {% endif %}
+    <!--End: Highlighted -->
+
+<br>
+
+    <!--Start: messages -->
+    {% if page.messages %}
+      <div class="messages">
+          {{ page.messages }}
+      </div>
+    {% endif %}
+    <!--End: messages -->
+
+<br>
+
+    {% if is_front %}
+      <!--Start: slider -->
+      {% if page.slider %}
+        <div class="slider">
+            {{ page.slider }}
+        </div>
+      {% endif %}
+      <!--End: messages -->
+    {% endif %}
+
+<br>
+
+    <!--Start: Title -->
+    {%  if page.page_title and not is_front %}
+      <div class="page-title">
+        {{ page.page_title }}
+      </div>
+    {% endif %}
+    <!--End: Title -->
+
+<br>
+
+    <!--- Start Content -->
+    {% if page.content %}
+      <main role="main">
+        <a id="main-content" tabindex="-1"></a>
+        <div class="layout-content">
+
+          <!--- Start: Left SideBar -->
+            {% if page.sidebar_first %}
+              <div class="sidebar-first">
+                {{ page.sidebar_first }}
+              </div>
+            {% endif %}
+          <!-- End Left SideBar -->
+
+          <div class="main-content">
+            {{ page.content }}
+          </div>
+          
+          <!-- Start: Right SideBar -->
+            {% if page.sidebar_second %}
+              <div class="sidebar-second">
+                {{ page.sidebar_second }}
+              </div>
+            {% endif %}
+          <!-- End: Right SideBar -->
+
+        </div>
+      </main>
+    {% endif %}
+    <!-- End: Content -->
+
+
+<br>
+
+    <!-- Start: Footer First -->
+    {% if page.footer %}
+      <div class="footer">
+        {{ page.footer }}
+
+        <!-- Start: Footer First -->
+        {% if page.second_footer %}
+          <div class="second_footer">
+            {{ page.second_footer }}
+          </div>
+        {% endif %}
+        <!-- End: Footer First -->
+
+      </div>
+    {% endif %}
+    <!-- End: Footer First -->
+
+<br>

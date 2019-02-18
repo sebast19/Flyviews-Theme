@@ -1,0 +1,427 @@
+@import "colors";
+
+html {
+  background-color: $white_cream;
+  font-family: sans-serif;
+}
+
+.dialog-off-canvas-main-canvas {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'highlighted highlighted highlighted'
+    'messages messages messages'
+    'slider slider slider'
+    'main main main'
+    'footer footer footer';
+}
+
+.sidebar-first section, .sidebar-first nav, .sidebar-second section, .sidebar-second nav {
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  background-color: $light_grey;
+}
+
+.messages {
+  grid-area: messages;
+}
+
+.block h4 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $gris_oscuro;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+a {
+  color: $links_color;
+}
+
+ul > li > a {
+  color: $list_color;
+}
+
+/* Regions */
+
+.header {
+  grid-area: header;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  background-color: $light_grey;
+  box-sizing: border-box;
+}
+
+.header > div {
+  align-items: center;
+}
+
+.header > div section img {
+  width: 200px;
+}
+
+.header > div section {
+  text-align: center;
+  margin-top: 15px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.header > div nav {
+  display: inline-block;
+  margin-top: -10px;
+}
+
+#block-flyviews-account-menu {
+  float: right;
+}
+
+.slider {
+  grid-area: slider;
+  width: 98%;
+  margin: 0 auto;
+  background-color: $light_grey;
+  position: relative;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.slider > div > section {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.slider > div > section div {
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.slider > div > section div a {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.slider > div img {
+  width: 100%;
+  height: 100%;
+}
+
+.header > div  nav > ul {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.header > div  nav > ul  li {
+  display: inline-block;
+  list-style: none;
+}
+
+.header > div  nav > ul  li > a {
+  color: #000;
+  font-weight: bold;
+  opacity: .5;
+  padding: 10px;
+  text-decoration: none;
+  transition: all .5s ease;
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.slider-container {
+  grid-area: slider;
+  width: 98%;
+  margin: 0 auto;
+  background-color: $light_grey;
+  margin-bottom: 15px;
+}
+
+.highlighted {
+  grid-area: highlighted;
+  width: 98%;
+  margin: 0 auto;
+  background-color: $light_grey;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+main {
+  grid-area: main;
+}
+
+.layout-content {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+  'sidebar-first main-content sidebar-second';
+}
+
+.sidebar_first {
+  grid-area: sidebar-first;
+}
+
+.sidebar_second {
+  grid-area: sidebar-second;
+}
+
+.main-content > div {
+  grid-area: main-content;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: [col1] 1fr [col2] 1fr;
+  width: 98%;
+  background-color: $light_grey;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.second_footer {
+  grid-column: col2;
+  text-align: center;
+  align-items: center;
+}
+
+/* Regions */
+
+/*********************************************************************/
+
+/* Regions together  */
+
+.sidebar-first, .sidebar-second, .layout-content {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.sidebar-first h2, .sidebar-second h2 {
+  border-bottom: 1px solid $gris_oscuro;
+  padding-bottom: 15px;
+}
+
+.layout-content h2 a {
+  text-decoration: none;
+  color: rgba(33, 33, 33, .6);
+  transition: all .2s ease;
+}
+
+.layout-content h2 a:hover {
+  color: #000;
+}
+
+/* End Regions together  */
+
+/*********************************************************************/
+
+/* Styles for IDS # */
+
+.layout-content > div section#block-flyviews-local-tasks ul {
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 15px 0;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+    border-collapse: collapse;
+    margin-bottom: 1px;
+    transition: all .5s ease;
+    background-color: #2196F3;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: $white;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: #1976D2;
+    }
+  }
+}
+
+.layout-content .prueba ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 10px 0 10px 0;
+  right: 0;
+}
+
+.layout-content .views-row .prueba ul li {
+  float: right;
+  margin-right: 10px;
+
+    a {
+      color: #3F51B5;
+    }
+}
+
+
+.layout-content .quickedit-field > div:first-child {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.layout-content .quickedit-field  div.child-tags a {
+  text-decoration: none;
+  color: $white;
+  background-color: #9C27B0;
+  font-size: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.layout-content .quickedit-field div.parent-tags div {
+  display: inline-block;
+}
+
+.messages > div > div[ role="contentinfo" ] {
+  background-color: #2196F3;
+  opacity: .7;
+  border-left: 5px solid #1565C0;
+  width: 98%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: $white;
+  font-weight: bold;
+
+  a {
+    color: #000;
+  }
+}
+
+
+.highlighted > div section > nav[ role="navigation" ] ol {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-right: 5px;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:after {
+      content: ' /';
+    }
+  }
+}
+
+input[ type="text" ], input[ type="search" ], select {
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[ type="search" ] {
+  width: 100%;
+  border: 1px solid lightgrey;
+}
+
+.button {
+  background-color: $primary_button;
+  border: 0;
+  padding: 8px 15px;
+  color: $white;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1976D2;
+  }
+}
+
+.button--primary {
+  background-color: #4CAF50;
+
+  &:hover {
+    background-color: #388E3C;
+  }
+}
+
+.highlighted > div > section > div:last-child {
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: 650px;
+  }
+}
+
+/* End Styles for IDS # */
+
+.view-row {
+  margin-bottom: 10px;
+}
+
+.views-view-grid {
+  text-align: center;
+}
+
+.views-field {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+span.views-field-title > span.field-content, span.views-field-field-release-date > span.field-content {
+  color: $white;
+  background-color: #2196F3;
+  font-size: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+
+.views-field-body {
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+span.views-field > span.field-content  a {
+  color: $white;
+  background-color: #9C27B0;
+  font-size: 12px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.views-field-body {
+  text-align: justify;
+}

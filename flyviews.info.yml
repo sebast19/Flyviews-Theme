@@ -1,0 +1,27 @@
+name: FlyViews Theme
+description: Mi primer tema!
+core: 8.x
+project: 'flyviews_theme'
+type: theme
+version: 1.x
+
+screenshot: background.jpg
+
+libraries:
+  - flyviews/flyviews-library
+
+regions:
+  #Header
+  header: 'Header'
+
+  #Global region
+  highlighted: 'Highlighted'
+  messages: 'Messages Or info'
+  slider: 'Images or Slider to show in home'
+  content: 'Content'
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
+
+  #Footer widgets
+  footer: 'Footer'
+  second_footer: 'Second Footer'
