@@ -1,8 +1,0 @@
-<?php
-
-/**
- * Implements hook_preprocess()
- */
-function flyviews_preprocess(&$variables, $hook) {
-  $variables['base_path'] = base_path();
-}

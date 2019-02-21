@@ -22,3 +22,5 @@ gulp.task('watch', function () {
         livereload.changed(files)
     });
 });
+
+gulp.task('default', ['sass']);

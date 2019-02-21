@@ -1,7 +1,7 @@
 @import "colors";
 
 html {
-  background-color: $white_cream;
+  background-color: $light_grey;
   font-family: sans-serif;
 }
 
@@ -16,22 +16,6 @@ html {
     'footer footer footer';
 }
 
-.sidebar-first section, .sidebar-first nav, .sidebar-second section, .sidebar-second nav {
-  padding: 15px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  background-color: $light_grey;
-}
-
-.messages {
-  grid-area: messages;
-}
-
-.block h4 {
-  padding-bottom: 15px;
-  border-bottom: 1px solid $gris_oscuro;
-}
-
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
@@ -44,111 +28,113 @@ ul > li > a {
   color: $list_color;
 }
 
-/* Regions */
+// Header Section
+
+#block-views-block-slider-recommends-block-1 {
+
+  img {
+    width: 150px;
+    height: 170px;
+    border: 0;
+    transition: all .5s ease;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
 
 .header {
   grid-area: header;
   width: 98%;
   margin: 0 auto;
-  padding: 0 15px;
   margin-bottom: 15px;
-  background-color: $light_grey;
+  background-image: linear-gradient(to bottom right, $teal, $light_blue);
   box-sizing: border-box;
+
+  > div {
+    align-items: center;
+
+    section {
+      text-align: center;
+      background-color: $white;
+
+      img {
+        width: 220px;
+      }
+    }
+
+    nav {
+      display: inline-block;
+
+      > ul {
+        padding: 10px;
+        box-sizing: border-box;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          list-style: none;
+
+          ul {
+            display: block;
+          }
+
+          > a {
+            color: $white;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            transition: all .5s ease;
+
+            &:hover {
+              color: $white;
+              background-color: $dark_grey;
+            }
+          }
+        }
+      }
+    }
+
+  }
+} 
+
+// End Header
+
+// Messages Section
+
+.messages {
+  grid-area: messages;
 }
 
-.header > div {
-  align-items: center;
+// Hightlighted Section
+.second_footer
+.sidebar-first section, 
+.sidebar-first nav, 
+.sidebar-second section, 
+.sidebar-second nav {
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  background-image: linear-gradient(to bottom right, $teal, $light_blue);
 }
 
-.header > div section img {
-  width: 200px;
-}
+// Siderbars Section
 
-.header > div section {
-  text-align: center;
-  margin-top: 15px;
-  border-bottom: 1px solid lightgrey;
-}
-
-.header > div nav {
-  display: inline-block;
-  margin-top: -10px;
+.block h4 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $gris_oscuro;
 }
 
 #block-flyviews-account-menu {
   float: right;
 }
 
-.slider {
-  grid-area: slider;
-  width: 98%;
-  margin: 0 auto;
-  background-color: $light_grey;
-  position: relative;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-.slider > div > section {
-  width: 70%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.slider > div > section div {
-  text-align: center;
-  padding: 5px;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.slider > div > section div a {
-  font-size: 15px;
-  font-weight: normal;
-}
-
-.slider > div img {
-  width: 100%;
-  height: 100%;
-}
-
-.header > div  nav > ul {
-  padding: 10px 10px;
-  box-sizing: border-box;
-}
-
-.header > div  nav > ul  li {
-  display: inline-block;
-  list-style: none;
-}
-
-.header > div  nav > ul  li > a {
-  color: #000;
-  font-weight: bold;
-  opacity: .5;
-  padding: 10px;
-  text-decoration: none;
-  transition: all .5s ease;
-
-  &:hover {
-    opacity: 0;
-  }
-}
-
-.slider-container {
-  grid-area: slider;
-  width: 98%;
-  margin: 0 auto;
-  background-color: $light_grey;
-  margin-bottom: 15px;
-}
-
 .highlighted {
   grid-area: highlighted;
   width: 98%;
   margin: 0 auto;
-  background-color: $light_grey;
+  background-color: $white;
   padding: 5px;
   box-sizing: border-box;
   margin-bottom: 15px;
@@ -160,22 +146,19 @@ main {
 
 .layout-content {
   width: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-areas:
-  'sidebar-first main-content sidebar-second';
+  display: flex;
 }
 
-.sidebar_first {
-  grid-area: sidebar-first;
+.sidebar-first {
+  width: 15%;
 }
 
-.sidebar_second {
-  grid-area: sidebar-second;
+.sidebar-second {
+  width: 20%;
 }
 
-.main-content > div {
-  grid-area: main-content;
+.main-content {
+  width: 65%;
 }
 
 .footer {
@@ -183,7 +166,7 @@ main {
   display: grid;
   grid-template-columns: [col1] 1fr [col2] 1fr;
   width: 98%;
-  background-color: $light_grey;
+  background-color: $white;
   padding: 15px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -194,6 +177,55 @@ main {
   text-align: center;
   align-items: center;
 }
+
+// Slider 
+
+.slider {
+  grid-area: slider;
+  width: 98%;
+  margin: 0 auto;
+  background-color: $white;
+  position: relative;
+  padding: 25px;
+  box-sizing: border-box;
+
+  > div {
+    background-color: inherit;
+    position: relative;
+    display: flex;
+
+    > section {
+      position: relative;
+      width: 50%;
+      // width: 60%;
+      // margin: 0 auto;
+      padding: 10px;
+
+      div {
+        text-align: center;
+        padding: 5px;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-weight: bold;
+        color: $dark_grey;
+
+        a {
+          font-size: 16px;
+          font-weight: normal;
+          color: $list_color;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 520px;
+      border: 5px solid $black;
+    }
+  }
+}
+
+// End Slider
 
 /* Regions */
 
@@ -227,7 +259,7 @@ main {
 
 /* Styles for IDS # */
 
-.layout-content > div section#block-flyviews-local-tasks ul {
+.layout-content > div section#block-flyviews-local-tasks > ul {
   list-style: none;
   overflow: hidden;
   margin: 0;
@@ -425,3 +457,21 @@ span.views-field > span.field-content  a {
 .views-field-body {
   text-align: justify;
 }
+
+.last-container {
+  border: 1px solid;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  p {
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
